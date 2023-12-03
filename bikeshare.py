@@ -197,16 +197,16 @@ def user_stats(df, city):
 
     # display counts of user types
     user_types = df['User Type'].value_counts()
-    print("Counts of Each User Type:\n", user_types)
+    print("User Type Counts:\n", user_types)
 
     # display counts of gender
     try:
         gender = df['Gender'].value_counts()
         print(' ' * 40)
-        print('Counts of Each User Gender:')
+        print('User Gender Counts:')
         print(gender)
     except:
-        print('Counts of Each User Gender:\nSorry, no gender data available for {} City'.format(city.title()))
+        print('User Gender Counts:\nSorry, no gender data available for {} City'.format(city.title()))
 
     # display earliest, most recent, and most common year of birth
     try:
@@ -214,12 +214,12 @@ def user_stats(df, city):
         recent = df['Birth Year'].max() #Youngest birth Year
         common = df['Birth Year'].mode() #This gives the Common Birth Year
         print(' ' * 40)
-        print('Counts of User Birth Year:')
+        print('User Birth Year Counts:')
         print('Oldest User(s) Birth Year: ', int(earliest))
         print('Youngest User(s) Birth Year: ', int(recent))
         print('Most Common Birth Year: ', int(common))
     except:
-        print('Counts of User Birth Year:\nSorry, no birth year data available for {} City'.format(city.title()))
+        print('User Birth Year Counts:\nSorry, no birth year data available for {} City'.format(city.title()))
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
